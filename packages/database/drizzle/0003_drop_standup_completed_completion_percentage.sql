@@ -1,0 +1,1 @@
+ALTER TABLE `standup_completed_items` DROP COLUMN `completionPercentage`;

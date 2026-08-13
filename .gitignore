@@ -1,0 +1,70 @@
+# macOS
+.DS_Store
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Testing and coverage
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+
+# Build outputs
+dist/
+build/
+.output/
+.bun/
+packages/contracts/src/*.js
+packages/contracts/src/*.js.map
+packages/contracts/src/*.d.ts
+packages/contracts/src/*.d.ts.map
+
+# Tool caches
+.cache/
+.turbo/
+.vite/
+*.tsbuildinfo
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Tailwind / PostCSS caches
+.parcel-cache/
+
+# TanStack Router generated files
+**/routeTree.gen.ts
+**/*.gen.ts
+
+# Capacitor / mobile
+android/.gradle/
+android/app/build/
+android/build/
+ios/App/build/
+ios/DerivedData/
+ios/.symlinks/
+ios/Pods/
+
+# Local runtime / temp files
+tmp/
+temp/
+*.tmp

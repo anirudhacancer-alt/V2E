@@ -1,0 +1,171 @@
+{
+  "dataset_info": {
+    "name": "Construction Progress Call Transcripts for NLP",
+    "version": "1.0",
+    "description": "Pattern recognition system for extracting labor hours and completion rates from construction supervisor calls",
+    "pattern_methodology": "Multi-method approach combining spaCy linguistic patterns and regex string matching",
+    "supervisor": "Dr. Prasan Yapa",
+    "contact": "iynguuuuu2002@gmail.com"
+  },
+
+  "labor_hours_patterns": {
+    "description": "Patterns for extracting worker names and hours worked",
+    "pattern_examples": [
+      {
+        "pattern_id": "LABOR_DIRECT",
+        "description": "Direct pattern: 'Person worked X hours'",
+        "structure": "[PERSON] + [worked/did/completed] + [NUMBER] + [hour/hrs/hr]",
+        "examples": [
+          "John worked 8 hours",
+          "Kevin completed 10 hours",
+          "Sarah did 6 hours"
+        ]
+      },
+      {
+        "pattern_id": "LABOR_PUT_IN",
+        "description": "Put in pattern: 'Person put in X hours'",
+        "structure": "[PERSON] + [put] + [in] + [NUMBER] + [hour/hrs/hr]",
+        "examples": ["Kevin put in 10 hours", "Mike put in 4 hours on concrete"]
+      },
+      {
+        "pattern_id": "LABOR_INDIRECT",
+        "description": "Indirect pattern: 'X hours by Person'",
+        "structure": "[NUMBER] + [hour/hrs/hr] + [by] + [PERSON]",
+        "examples": ["8 hours by John", "10 hours by Kevin on masonry"]
+      },
+      {
+        "pattern_id": "LABOR_DASH",
+        "description": "Dash pattern: 'Person - X hours'",
+        "structure": "[PERSON] + [-] + [NUMBER] + [hour/hrs/hr]",
+        "examples": ["Mike - 4 hours", "Sarah - 6 hours"]
+      },
+      {
+        "pattern_id": "LABOR_SPENT",
+        "description": "Spent pattern: 'Person spent X hours'",
+        "structure": "[PERSON] + [spent] + [NUMBER] + [hour/hrs/hr]",
+        "examples": [
+          "Sarah spent 6 hours on masonry",
+          "John spent 8 hours working on concrete"
+        ]
+      }
+    ]
+  },
+
+  "completion_rate_patterns": {
+    "description": "Patterns for extracting department completion percentages",
+    "percentage_patterns": [
+      {
+        "pattern_id": "COMPLETION_PERCENTAGE",
+        "description": "Standard percentage: 'Department X% complete'",
+        "structure": "[DEPARTMENT] + [NUMBER] + [%] + [complete/done/finished]",
+        "examples": [
+          "Concrete 70% complete",
+          "Masonry 60% done",
+          "Metals 85% finished"
+        ]
+      },
+      {
+        "pattern_id": "COMPLETION_IS_PERCENTAGE",
+        "description": "With verb: 'Department is X% complete'",
+        "structure": "[DEPARTMENT] + [is] + [NUMBER] + [%] + [complete/done/finished]",
+        "examples": [
+          "Masonry is 60% done",
+          "Concrete is around 50% complete",
+          "Woods is about 45% finished"
+        ]
+      },
+      {
+        "pattern_id": "COMPLETION_FRACTION",
+        "description": "Fraction pattern: 'X out of Y department tasks'",
+        "structure": "[NUMBER] + [of/out of] + [NUMBER] + [DEPARTMENT] + [tasks/complete]",
+        "examples": [
+          "3 out of 4 concrete tasks complete",
+          "2 of 5 masonry tasks done"
+        ],
+        "note": "Convert to percentage: (numerator/denominator) * 100"
+      },
+      {
+        "pattern_id": "COMPLETION_QUALITATIVE",
+        "description": "Qualitative indicators: 'Department nearly finished'",
+        "structure": "[DEPARTMENT] + [nearly/almost/fully] + [finished/complete/done]",
+        "examples": [
+          "Metals nearly finished",
+          "Concrete almost complete",
+          "Woods fully completed"
+        ],
+        "note": "See qualitative_mappings for percentage equivalents"
+      }
+    ],
+
+    "regex_patterns": [
+      {
+        "pattern_id": "REGEX_PERCENTAGE",
+        "regex": "(concrete|masonry|metals|woods|doors)\\s+(?:is\\s+)?(?:around\\s+|about\\s+|roughly\\s+)?(\\d+)%\\s*(?:complete|done|finished)",
+        "description": "Flexible percentage matching with optional qualifiers",
+        "examples": [
+          "concrete around 50% complete",
+          "masonry about 45% done",
+          "metals 80% finished"
+        ]
+      },
+      {
+        "pattern_id": "REGEX_FRACTION",
+        "regex": "(\\d+)\\s+(?:out\\s+)?of\\s+(\\d+)\\s+(concrete|masonry|metals|woods|doors)",
+        "description": "Fraction pattern converted to percentage",
+        "examples": ["3 out of 4 concrete", "2 of 5 masonry done"]
+      },
+      {
+        "pattern_id": "REGEX_QUALITATIVE_PROGRESS",
+        "regex": "(concrete|masonry|metals|woods|doors)\\s+(?:is\\s+)?progressing\\s+(normally|steadily|well|as\\s+expected)",
+        "description": "Neutral progress indicators",
+        "examples": [
+          "concrete progressing normally",
+          "masonry progressing steadily"
+        ]
+      }
+    ]
+  },
+
+  "department_keywords": {
+    "description": "Standard construction departments in dataset",
+    "departments": [
+      "concrete",
+      "masonry",
+      "metals",
+      "woods",
+      "doors",
+      "electrical",
+      "plumbing",
+      "carpentry"
+    ]
+  },
+
+  "qualitative_mappings": {
+    "description": "Heuristic mapping for implicit completion indicators based on construction industry conventions",
+    "mappings": {
+      "nearly finished": 90,
+      "nearly complete": 90,
+      "almost finished": 85,
+      "almost complete": 85,
+      "fully completed": 100,
+      "fully finished": 100,
+      "barely progressing": 5,
+      "progressing normally": 50,
+      "progressing steadily": 50,
+      "progressing as expected": 50,
+      "moving forward as planned": 50,
+      "progressing well": 60
+    }
+  },
+
+  "usage_example": {
+    "description": "How to use these patterns with spaCy and regex",
+    "python_code": "# Load spaCy model\nimport spacy\nimport re\n\nnlp = spacy.load('en_core_web_sm')\n\n# Example transcript\ntext = 'John worked 8 hours on concrete. Concrete is 70% complete.'\n\n# spaCy pattern matching\nfrom spacy.matcher import Matcher\nmatcher = Matcher(nlp.vocab)\n\n# Add labor pattern\nlabor_pattern = [{\"ENT_TYPE\": \"PERSON\"}, {\"LEMMA\": \"work\"}, {\"LIKE_NUM\": True}, {\"LEMMA\": \"hour\"}]\nmatcher.add(\"LABOR\", [labor_pattern])\n\n# Regex pattern matching for completion\ncompletion_regex = r'(concrete|masonry)\\s+(\\d+)%\\s*complete'\nmatches = re.finditer(completion_regex, text.lower())\n\n# Extract metrics\ndoc = nlp(text)\nfor match_id, start, end in matcher(doc):\n    print(f'Labor: {doc[start:end].text}')\n\nfor match in matches:\n    print(f'Completion: {match.group(1)} - {match.group(2)}%')"
+  },
+
+  "notes": {
+    "research_context": "This pattern library was developed as part of research on automated construction progress tracking using NLP",
+    "supervisor": "Dr. Prasan Yapa",
+    "contact": "For methodology details or collaboration: iynguuuuu2002@gmail.com"
+  }
+}

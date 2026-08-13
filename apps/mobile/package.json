@@ -1,0 +1,39 @@
+{
+  "name": "@v2e/mobile",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "pnpm --filter @v2e/field-app build && pnpm sync",
+    "sync": "npx cap sync",
+    "sync:ios": "npx cap sync ios",
+    "sync:android": "npx cap sync android",
+    "copy": "npx cap copy",
+    "copy:ios": "npx cap copy ios",
+    "copy:android": "npx cap copy android",
+    "doctor": "npx cap doctor",
+    "ios": "npx cap open ios",
+    "android": "npx cap open android",
+    "ios:run": "npx cap run ios",
+    "android:run": "npx cap run android",
+    "beta:ios": "pnpm build && npx cap open ios",
+    "beta:android": "pnpm build && npx cap open android",
+    "archive:ios": "pnpm build && npx cap open ios",
+    "archive:android": "pnpm build && npx cap open android"
+  },
+  "dependencies": {
+    "@capacitor/app": "^6.0.3",
+    "@capacitor/camera": "^6.1.3",
+    "@capacitor/core": "^6.2.0",
+    "@capacitor/splash-screen": "^6.0.2",
+    "@capacitor/status-bar": "^6.0.3",
+    "@mozartec/capacitor-microphone": "^6.0.0",
+    "capacitor-native-settings": "^6.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^6.2.0",
+    "@capacitor/cli": "^6.2.0",
+    "@capacitor/ios": "^6.2.0",
+    "typescript": "^5.7.2"
+  }
+}

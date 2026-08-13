@@ -1,0 +1,58 @@
+PODS:
+  - Capacitor (6.2.1):
+    - CapacitorCordova
+  - CapacitorApp (6.0.3):
+    - Capacitor
+  - CapacitorCamera (6.1.3):
+    - Capacitor
+  - CapacitorCordova (6.2.1)
+  - CapacitorNativeSettings (6.0.6):
+    - Capacitor
+  - CapacitorSplashScreen (6.0.4):
+    - Capacitor
+  - CapacitorStatusBar (6.0.3):
+    - Capacitor
+  - MozartecCapacitorMicrophone (6.0.0):
+    - Capacitor
+
+DEPENDENCIES:
+  - "Capacitor (from `../../../../node_modules/.pnpm/@capacitor+ios@6.2.1_@capacitor+core@6.2.1/node_modules/@capacitor/ios`)"
+  - "CapacitorApp (from `../../../../node_modules/.pnpm/@capacitor+app@6.0.3_@capacitor+core@6.2.1/node_modules/@capacitor/app`)"
+  - "CapacitorCamera (from `../../../../node_modules/.pnpm/@capacitor+camera@6.1.3_@capacitor+core@6.2.1/node_modules/@capacitor/camera`)"
+  - "CapacitorCordova (from `../../../../node_modules/.pnpm/@capacitor+ios@6.2.1_@capacitor+core@6.2.1/node_modules/@capacitor/ios`)"
+  - "CapacitorNativeSettings (from `../../../../node_modules/.pnpm/capacitor-native-settings@6.0.6_@capacitor+core@6.2.1/node_modules/capacitor-native-settings`)"
+  - "CapacitorSplashScreen (from `../../../../node_modules/.pnpm/@capacitor+splash-screen@6.0.4_@capacitor+core@6.2.1/node_modules/@capacitor/splash-screen`)"
+  - "CapacitorStatusBar (from `../../../../node_modules/.pnpm/@capacitor+status-bar@6.0.3_@capacitor+core@6.2.1/node_modules/@capacitor/status-bar`)"
+  - "MozartecCapacitorMicrophone (from `../../../../node_modules/.pnpm/@mozartec+capacitor-microphone@6.0.0_@capacitor+core@6.2.1/node_modules/@mozartec/capacitor-microphone`)"
+
+EXTERNAL SOURCES:
+  Capacitor:
+    :path: "../../../../node_modules/.pnpm/@capacitor+ios@6.2.1_@capacitor+core@6.2.1/node_modules/@capacitor/ios"
+  CapacitorApp:
+    :path: "../../../../node_modules/.pnpm/@capacitor+app@6.0.3_@capacitor+core@6.2.1/node_modules/@capacitor/app"
+  CapacitorCamera:
+    :path: "../../../../node_modules/.pnpm/@capacitor+camera@6.1.3_@capacitor+core@6.2.1/node_modules/@capacitor/camera"
+  CapacitorCordova:
+    :path: "../../../../node_modules/.pnpm/@capacitor+ios@6.2.1_@capacitor+core@6.2.1/node_modules/@capacitor/ios"
+  CapacitorNativeSettings:
+    :path: "../../../../node_modules/.pnpm/capacitor-native-settings@6.0.6_@capacitor+core@6.2.1/node_modules/capacitor-native-settings"
+  CapacitorSplashScreen:
+    :path: "../../../../node_modules/.pnpm/@capacitor+splash-screen@6.0.4_@capacitor+core@6.2.1/node_modules/@capacitor/splash-screen"
+  CapacitorStatusBar:
+    :path: "../../../../node_modules/.pnpm/@capacitor+status-bar@6.0.3_@capacitor+core@6.2.1/node_modules/@capacitor/status-bar"
+  MozartecCapacitorMicrophone:
+    :path: "../../../../node_modules/.pnpm/@mozartec+capacitor-microphone@6.0.0_@capacitor+core@6.2.1/node_modules/@mozartec/capacitor-microphone"
+
+SPEC CHECKSUMS:
+  Capacitor: c95400d761e376be9da6be5a05f226c0e865cebf
+  CapacitorApp: a19ccb4f5f32d2534be5c6f524d5a9b614a1e8a7
+  CapacitorCamera: 5ba135b0cb55a788758139fa2404d726bf60f0f3
+  CapacitorCordova: 8d93e14982f440181be7304aa9559ca631d77fff
+  CapacitorNativeSettings: 453aa001834006fe051ffa8e5f0bdde7409ec69f
+  CapacitorSplashScreen: ef140a8b1ea7244e0c245ce2dd4ce5251e7ab86a
+  CapacitorStatusBar: 149cde8f1328ec3aa6cbdd872a55137ae3f98b16
+  MozartecCapacitorMicrophone: c229536df8ab3d1fcf7c850011d2729f6d4865d1
+
+PODFILE CHECKSUM: 42d9ec9c18ccf5e60af94c25bc8e6120a436bf74
+
+COCOAPODS: 1.16.2

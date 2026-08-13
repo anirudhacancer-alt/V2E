@@ -1,0 +1,2251 @@
+models:
+  openai:text:gpt-4o-mini:
+    display_name: OpenAI GPT-4o mini
+    provider_name: openai
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://api.openai.com/v1
+      full_url: https://api.openai.com/v1/chat/completions
+      protocol: openai_compatible
+      api_version: v1
+      use_max_completion_tokens: true
+      has_temperature_supported: true
+      max_input_tokens: 128000
+      max_output_tokens: 16384
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      deployment: "gpt-4o-mini"
+      model_param: false
+      tool_format: openai_tool_calls
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: OPENAI_API_KEY
+    capabilities:
+      tool_calls: true
+      reasoning: false
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: false
+      lifecycle_status: active
+    cost:
+      provider: openai
+      provider_key: gpt-4o-mini
+      currency: USD
+      cost_per_1m_input: 0.15
+      cost_per_1m_output: 0.6
+  openai:text:gpt-4o:
+    display_name: OpenAI GPT-4o
+    provider_name: openai
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://api.openai.com/v1
+      full_url: https://api.openai.com/v1/chat/completions
+      protocol: openai_compatible
+      api_version: v1
+      use_max_completion_tokens: true
+      has_temperature_supported: true
+      max_input_tokens: 128000
+      max_output_tokens: 16384
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      deployment: "gpt-4o"
+      model_param: false
+      tool_format: openai_tool_calls
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: OPENAI_API_KEY
+    capabilities:
+      tool_calls: true
+      reasoning: false
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: false
+      lifecycle_status: active
+    cost:
+      provider: openai
+      provider_key: gpt-4o
+      currency: USD
+      cost_per_1m_input: 2.5
+      cost_per_1m_output: 10.0
+  azure_foundry:image:flux-2-pro:
+    display_name: Flux 2 Pro
+    provider_name: azure-foundry
+    input_modality:
+      - text
+      - image
+    output_modality:
+      - image
+    runtime:
+      base_url: https://adl-ai-foundry.services.ai.azure.com
+      full_url: https://adl-ai-foundry.services.ai.azure.com/providers/blackforestlabs/v1/flux-2-pro?api-version=preview
+      protocol: openai_compatible
+      api_version: preview
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      model_param: true
+      deployment: FLUX.2-pro
+      response_format_strict_is_string: false
+      inject_root_additional_properties_false: true
+      max_input_tokens: 128000
+      max_output_tokens: 4096
+      tool_format: none
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: AZURE_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: black-forest-labs/FLUX.2-pro
+      currency: USD
+      cost_per_1m_input: 0.015
+      cost_per_1m_output: 0.03
+      cost_per_1m_cached_input: 0.015
+      cost_per_1m_cached_output: 0.03
+      cost_per_1m_pixels: 0.048
+  azure_foundry:audio:gpt-audio:
+    display_name: GPT Audio
+    provider_name: azure-foundry
+    input_modality:
+      - audio
+    output_modality:
+      - audio
+    runtime:
+      base_url: https://adl-ai-foundry.cognitiveservices.azure.com
+      full_url: https://adl-ai-foundry.cognitiveservices.azure.com/openai/deployments/gpt-audio/chat/completions?api-version=2024-08-01-preview
+      protocol: openai_compatible
+      api_version: 2024-08-01-preview
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      deployment: gpt-audio
+      response_format_strict_is_string: false
+      inject_root_additional_properties_false: true
+      model_param: false
+      max_input_tokens: 128000
+      max_output_tokens: 4096
+      tool_format: none
+    auth:
+      type: header
+    secrets:
+      type: environment
+      name: AZURE_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: microsoft/gpt-audio
+      currency: USD
+      cost_per_1m_input: 0.6
+      cost_per_1m_output: 2.4
+      cost_per_1m_cached_input: 0.6
+      cost_per_1m_cached_output: 2.4
+  azure_foundry:audio:gpt-realtime-mini:
+    display_name: GPT Realtime Mini
+    provider_name: azure-foundry
+    input_modality:
+      - audio
+    output_modality:
+      - audio
+    runtime:
+      base_url: https://adl-ai-foundry.cognitiveservices.azure.com
+      full_url: https://adl-ai-foundry.cognitiveservices.azure.com/openai/deployments/gpt-realtime-mini/chat/completions?api-version=2024-08-01-preview
+      protocol: openai_compatible
+      api_version: 2024-08-01-preview
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      deployment: gpt-realtime-mini
+      response_format_strict_is_string: false
+      inject_root_additional_properties_false: true
+      model_param: false
+      max_input_tokens: 128000
+      max_output_tokens: 4096
+      tool_format: none
+    auth:
+      type: header
+    secrets:
+      type: environment
+      name: AZURE_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: microsoft/gpt-realtime-mini
+      currency: USD
+      cost_per_1m_input: 0.6
+      cost_per_1m_output: 2.4
+      cost_per_1m_cached_input: 0.6
+      cost_per_1m_cached_output: 2.4
+  azure_foundry:embedding:text-embedding-3-small:
+    display_name: Text Embedding 3 Small
+    provider_name: azure-foundry
+    input_modality:
+      - embedding
+    output_modality:
+      - embedding
+    runtime:
+      base_url: https://adl-ai-foundry.cognitiveservices.azure.com
+      full_url: https://adl-ai-foundry.cognitiveservices.azure.com/openai/deployments/text-embedding-3-small/embeddings?api-version=2024-08-01-preview
+      protocol: openai_compatible
+      api_version: 2024-08-01-preview
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      deployment: text-embedding-3-small
+      response_format_strict_is_string: false
+      inject_root_additional_properties_false: true
+      model_param: false
+      max_input_tokens: 128000
+      max_output_tokens: 4096
+      tool_format: none
+    auth:
+      type: header
+    secrets:
+      type: environment
+      name: AZURE_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: microsoft/text-embedding-3-small
+      currency: USD
+      cost_per_1m_input: 0.02
+      cost_per_1m_output: 0.02
+      cost_per_1m_cached_output: 0.02
+  azure_speech:stt:conversation:
+    display_name: Azure Speech STT (Conversation)
+    provider_name: azure-speech
+    input_modality:
+      - audio
+    output_modality:
+      - text
+    runtime:
+      base_url: https://eastus2.stt.speech.microsoft.com
+      full_url: https://eastus2.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1
+      protocol: azure_speech
+      api_version: v1
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      deployment: ""
+      response_format_strict_is_string: false
+      inject_root_additional_properties_false: true
+      model_param: false
+      max_input_tokens: 128000
+      max_output_tokens: 4096
+      tool_format: none
+    auth:
+      type: header
+    secrets:
+      type: environment
+      name: AZURE_SPEECH_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: azure/speech-stt
+      currency: USD
+      cost_per_1m_input: 0.006
+      cost_per_1m_output: 0
+      cost_per_1m_cached_input: 0
+      cost_per_1m_cached_output: 0
+  azure_speech:tts:jenny:
+    display_name: Azure Speech TTS (Jenny)
+    provider_name: azure-speech
+    input_modality:
+      - text
+    output_modality:
+      - audio
+    runtime:
+      base_url: https://eastus2.tts.speech.microsoft.com
+      full_url: https://eastus2.tts.speech.microsoft.com/cognitiveservices/v1
+      protocol: azure_speech
+      api_version: v1
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      deployment: ""
+      response_format_strict_is_string: false
+      inject_root_additional_properties_false: true
+      model_param: false
+      max_input_tokens: 128000
+      max_output_tokens: 4096
+      tool_format: none
+    auth:
+      type: header
+    secrets:
+      type: environment
+      name: AZURE_SPEECH_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: azure/speech-tts
+      currency: USD
+      cost_per_1m_input: 4.0
+      cost_per_1m_output: 0
+      cost_per_1m_cached_input: 0
+      cost_per_1m_cached_output: 0
+  azure_foundry:stt:whisper:
+    display_name: Azure OpenAI Whisper (STT)
+    provider_name: azure-foundry
+    input_modality:
+      - audio
+    output_modality:
+      - text
+    runtime:
+      base_url: https://adl-ai-foundry.cognitiveservices.azure.com
+      full_url: https://adl-ai-foundry.cognitiveservices.azure.com/openai/deployments/whisper/audio/transcriptions?api-version=2024-06-01
+      protocol: openai_compatible
+      api_version: "2024-06-01"
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      deployment: whisper
+      response_format_strict_is_string: false
+      inject_root_additional_properties_false: true
+      model_param: false
+      max_input_tokens: 128000
+      max_output_tokens: 4096
+      tool_format: none
+    auth:
+      type: header
+    secrets:
+      type: environment
+      name: AZURE_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: microsoft/whisper
+      currency: USD
+      cost_per_1m_input: 0.006
+      cost_per_1m_output: 0
+      cost_per_1m_cached_input: 0
+      cost_per_1m_cached_output: 0
+  azure_foundry:tts:gpt-4o-mini-tts:
+    display_name: Azure OpenAI TTS (gpt-4o-mini-tts)
+    provider_name: azure-foundry
+    input_modality:
+      - text
+    output_modality:
+      - audio
+    runtime:
+      base_url: https://adl-ai-foundry.cognitiveservices.azure.com
+      full_url: https://adl-ai-foundry.cognitiveservices.azure.com/openai/deployments/gpt-4o-mini-tts/audio/speech?api-version=2025-03-01-preview
+      protocol: openai_compatible
+      api_version: 2025-03-01-preview
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      deployment: gpt-4o-mini-tts
+      response_format_strict_is_string: false
+      inject_root_additional_properties_false: true
+      model_param: false
+      max_input_tokens: 128000
+      max_output_tokens: 4096
+      tool_format: none
+    auth:
+      type: header
+    secrets:
+      type: environment
+      name: AZURE_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: microsoft/tts-1
+      currency: USD
+      cost_per_1m_input: 15.0
+      cost_per_1m_output: 0
+      cost_per_1m_cached_input: 0
+      cost_per_1m_cached_output: 0
+  azure_foundry:image:flux-1-kontext-pro:
+    display_name: Flux 1 Kontext Pro
+    provider_name: azure-foundry
+    input_modality:
+      - text
+      - image
+    output_modality:
+      - image
+    runtime:
+      base_url: https://adl-ai-foundry.services.ai.azure.com
+      full_url: https://adl-ai-foundry.services.ai.azure.com/openai/deployments/FLUX.1-Kontext-pro/images/generations?api-version=2025-04-01-preview
+      protocol: openai_compatible
+      api_version: 2025-04-01-preview
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      deployment: FLUX.1-Kontext-pro
+      response_format_strict_is_string: false
+      inject_root_additional_properties_false: true
+      model_param: false
+      max_input_tokens: 128000
+      max_output_tokens: 4096
+      tool_format: none
+    auth:
+      type: header
+    secrets:
+      type: environment
+      name: AZURE_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: black-forest-labs/FLUX.1-kontext-pro
+      currency: USD
+      cost_per_1m_input: 0.015
+      cost_per_1m_output: 0.03
+      cost_per_1m_cached_input: 0.015
+      cost_per_1m_cached_output: 0.03
+      cost_per_1m_pixels: 0.048
+  openrouter:image:nano-banana:
+    display_name: Nano Banana
+    provider_name: openrouter
+    input_modality:
+      - text
+      - image
+    output_modality:
+      - image
+    runtime:
+      base_url: https://openrouter.ai/api/v1
+      full_url: https://openrouter.ai/api/v1/chat/completions
+      protocol: openrouter_sdk
+      api_version: v1
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      deployment: google/gemini-2.5-flash-image
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      max_input_tokens: 128000
+      max_output_tokens: 4096
+      tool_format: none
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: OPENROUTER_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-23T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: google/gemini-2.5-flash-image
+      currency: USD
+      cost_per_1m_input: 0.3
+      cost_per_1m_output: 2.5
+      cost_per_1m_cached_input: 0.3
+      cost_per_1m_cached_output: 2.5
+      cost_per_1m_pixels: 0.048
+  openrouter:image:seedream-4-5:
+    display_name: Seedream 4 5
+    provider_name: openrouter
+    input_modality:
+      - text
+      - image
+    output_modality:
+      - image
+    runtime:
+      base_url: https://openrouter.ai/api/v1
+      full_url: https://openrouter.ai/api/v1/chat/completions
+      protocol: openrouter_sdk
+      api_version: v1
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      deployment: bytedance-seed/seedream-4.5
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      max_input_tokens: 128000
+      max_output_tokens: 4096
+      tool_format: none
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: OPENROUTER_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-23T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: bytedance-seed/seedream-4.5
+      currency: USD
+      cost_per_1m_output: 9.581
+      cost_per_1m_cached_input: 9.581
+      cost_per_1m_cached_output: 9.581
+      cost_per_1m_pixels: 0.048
+  azure_foundry:text:deepseek-v3-2:
+    display_name: Deepseek V3 2
+    provider_name: azure-foundry
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://adl-ai-foundry.cognitiveservices.azure.com
+      full_url: https://adl-ai-foundry.cognitiveservices.azure.com/openai/deployments/DeepSeek-V3.2/chat/completions?api-version=2024-08-01-preview
+      protocol: openai_compatible
+      api_version: 2024-08-01-preview
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      max_input_tokens: 65536
+      max_output_tokens: 8192
+      deployment: DeepSeek-V3.2
+      response_format_strict_is_string: false
+      inject_root_additional_properties_false: true
+      model_param: false
+      tool_format: none
+    auth:
+      type: header
+    secrets:
+      type: environment
+      name: AZURE_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: deepseek-reasoner
+      currency: USD
+      cost_per_1m_input: 0.58
+      cost_per_1m_output: 1.68
+      cost_per_1m_cached_input: 0.58
+      cost_per_1m_cached_output: 1.68
+  azure_foundry:text:gpt-4-1-mini:
+    display_name: GPT 4 1 Mini
+    provider_name: azure-foundry
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://adl-ai-foundry.cognitiveservices.azure.com
+      full_url: https://adl-ai-foundry.cognitiveservices.azure.com/openai/deployments/gpt-4.1-mini/chat/completions?api-version=2024-08-01-preview
+      protocol: azure_sdk
+      api_version: 2024-08-01-preview
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      max_input_tokens: 128000
+      max_output_tokens: 16384
+      deployment: gpt-4.1-mini
+      response_format_strict_is_string: false
+      inject_root_additional_properties_false: true
+      model_param: false
+      tool_format: openai_tool_calls
+    auth:
+      type: header
+    secrets:
+      type: environment
+      name: AZURE_API_KEY
+    capabilities:
+      tool_calls: true
+      parallel_tool_calls: true
+      reasoning: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: gpt-4.1-mini
+      currency: USD
+      cost_per_1m_input: 0.8
+      cost_per_1m_output: 3.2
+      cost_per_1m_cached_input: 0.2
+      cost_per_1m_cached_output: 1.2
+    fallbacks:
+      - azure_foundry:text:gpt-5-nano
+  azure_foundry:text:gpt-5-2-chat:
+    display_name: GPT 5 2 Chat
+    provider_name: azure-foundry
+    input_modality:
+      - text
+      - image
+    output_modality:
+      - text
+    runtime:
+      base_url: https://adl-ai-foundry.cognitiveservices.azure.com
+      full_url: https://adl-ai-foundry.cognitiveservices.azure.com/openai/deployments/gpt-5.2-chat/chat/completions?api-version=2024-08-01-preview
+      protocol: azure_sdk
+      api_version: 2024-08-01-preview
+      use_max_completion_tokens: true
+      has_temperature_supported: false
+      max_input_tokens: 5000
+      max_output_tokens: 5000
+      deployment: gpt-5.2-chat
+      response_format_strict_is_string: false
+      inject_root_additional_properties_false: true
+      unsupported_params:
+        - stop
+      model_param: false
+      tool_format: openai_tool_calls
+    auth:
+      type: header
+    secrets:
+      type: environment
+      name: AZURE_API_KEY
+    capabilities:
+      tool_calls: true
+      parallel_tool_calls: true
+      reasoning: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: gpt-5-chat-latest
+      currency: USD
+      cost_per_1m_input: 1.75
+      cost_per_1m_output: 14
+      cost_per_1m_cached_input: 0.175
+      cost_per_1m_cached_output: 0.7
+    fallbacks:
+      - azure_foundry:text:kimi-k2-thinking
+      - azure_foundry:text:gpt-5-nano
+      - moonshot:text:kimi-for-coding
+  azure_foundry:text:gpt-5-nano:
+    display_name: GPT 5 Nano
+    provider_name: azure-foundry
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://adl-ai-foundry.cognitiveservices.azure.com
+      full_url: https://adl-ai-foundry.cognitiveservices.azure.com/openai/deployments/gpt-5-nano/chat/completions?api-version=2024-08-01-preview
+      protocol: azure_sdk
+      api_version: 2024-08-01-preview
+      use_max_completion_tokens: true
+      has_temperature_supported: false
+      max_input_tokens: 128000
+      max_output_tokens: 16384
+      deployment: gpt-5-nano
+      response_format_strict_is_string: false
+      inject_root_additional_properties_false: true
+      model_param: false
+      tool_format: none
+    auth:
+      type: header
+    secrets:
+      type: environment
+      name: AZURE_API_KEY
+    capabilities:
+      tool_calls: false
+      parallel_tool_calls: false
+      reasoning: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: gpt-5-nano
+      currency: USD
+      cost_per_1m_input: 0.05
+      cost_per_1m_output: 0.4
+      cost_per_1m_cached_input: 0.025
+      cost_per_1m_cached_output: 0.2
+  azure_foundry:text:grok-3-mini:
+    display_name: Grok 3 Mini
+    provider_name: azure-foundry
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://adl-ai-foundry.cognitiveservices.azure.com
+      full_url: https://adl-ai-foundry.cognitiveservices.azure.com/openai/deployments/grok-3-mini/chat/completions?api-version=2024-08-01-preview
+      protocol: openai_compatible
+      api_version: 2024-08-01-preview
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      max_input_tokens: 131072
+      max_output_tokens: 8192
+      deployment: grok-3-mini
+      response_format_strict_is_string: false
+      inject_root_additional_properties_false: true
+      model_param: false
+      tool_format: none
+    auth:
+      type: header
+    secrets:
+      type: environment
+      name: AZURE_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: true
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: grok-3-mini
+      currency: USD
+      cost_per_1m_input: 0.3
+      cost_per_1m_output: 0.5
+      cost_per_1m_cached_input: 0.3
+      cost_per_1m_cached_output: 0.5
+  azure_foundry:text:grok-4-fast-reasoning:
+    display_name: Grok 4 Fast Reasoning
+    provider_name: azure-foundry
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://adl-ai-foundry.cognitiveservices.azure.com
+      full_url: https://adl-ai-foundry.cognitiveservices.azure.com/openai/deployments/grok-4-fast-reasoning/chat/completions?api-version=2024-08-01-preview
+      protocol: azure_sdk
+      api_version: 2024-08-01-preview
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      max_input_tokens: 131072
+      max_output_tokens: 16384
+      deployment: grok-4-fast-reasoning
+      response_format_strict_is_string: false
+      inject_root_additional_properties_false: true
+      model_param: false
+      tool_format: openai_tool_calls
+    auth:
+      type: header
+    secrets:
+      type: environment
+      name: AZURE_API_KEY
+    capabilities:
+      tool_calls: true
+      parallel_tool_calls: true
+      reasoning: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: grok-4-fast-reasoning
+      currency: USD
+      cost_per_1m_input: 0.2
+      cost_per_1m_output: 0.5
+      cost_per_1m_cached_input: 0.2
+      cost_per_1m_cached_output: 0.5
+    fallbacks:
+      - azure_foundry:text:grok-3-mini
+      - azure_foundry:text:gpt-4-1-mini
+  azure_foundry:text:kimi-k2-5:
+    display_name: Kimi K2 5
+    provider_name: azure-foundry
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://adl-ai-foundry.cognitiveservices.azure.com
+      full_url: https://adl-ai-foundry.cognitiveservices.azure.com/openai/deployments/Kimi-K2.5/chat/completions?api-version=2024-08-01-preview
+      protocol: openai_compatible
+      api_version: 2024-08-01-preview
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      max_input_tokens: 131072
+      max_output_tokens: 8192
+      deployment: Kimi-K2.5
+      response_format_strict_is_string: false
+      inject_root_additional_properties_false: true
+      model_param: false
+      tool_format: openai_tool_calls
+    auth:
+      type: header
+    secrets:
+      type: environment
+      name: AZURE_API_KEY
+    capabilities:
+      tool_calls: true
+      parallel_tool_calls: true
+      reasoning: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: kimi-k2.5
+      currency: USD
+      cost_per_1m_input: 0.45
+      cost_per_1m_output: 2.2
+      cost_per_1m_cached_input: 0.45
+      cost_per_1m_cached_output: 2.2
+  azure_foundry:text:kimi-k2-thinking:
+    display_name: Kimi K2 Thinking
+    provider_name: azure-foundry
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://adl-ai-foundry.cognitiveservices.azure.com
+      full_url: https://adl-ai-foundry.cognitiveservices.azure.com/openai/deployments/Kimi-K2-Thinking/chat/completions?api-version=2024-08-01-preview
+      protocol: openai_compatible
+      api_version: 2024-08-01-preview
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      max_input_tokens: 131072
+      max_output_tokens: 16384
+      deployment: Kimi-K2-Thinking
+      response_format_strict_is_string: false
+      inject_root_additional_properties_false: true
+      model_param: false
+      tool_format: openai_tool_calls
+    auth:
+      type: header
+    secrets:
+      type: environment
+      name: AZURE_API_KEY
+    capabilities:
+      tool_calls: true
+      parallel_tool_calls: true
+      reasoning: true
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: kimi-k2-thinking
+      currency: USD
+      cost_per_1m_input: 0.4
+      cost_per_1m_output: 1.75
+      cost_per_1m_cached_input: 0.2
+  azure_foundry:text:model-router:
+    display_name: Model Router
+    provider_name: azure-foundry
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://adl-ai-foundry.cognitiveservices.azure.com
+      full_url: https://adl-ai-foundry.cognitiveservices.azure.com/openai/deployments/model-router/chat/completions?api-version=2024-08-01-preview
+      protocol: azure_sdk
+      api_version: 2024-08-01-preview
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      max_input_tokens: 128000
+      max_output_tokens: 16384
+      deployment: model-router
+      response_format_strict_is_string: false
+      inject_root_additional_properties_false: true
+      model_param: false
+      tool_format: openai_tool_calls
+    auth:
+      type: header
+    secrets:
+      type: environment
+      name: AZURE_API_KEY
+    capabilities:
+      tool_calls: true
+      parallel_tool_calls: false
+      reasoning: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: model-router
+      currency: USD
+      cost_per_1m_input: 0.5
+      cost_per_1m_output: 2.0
+      cost_per_1m_cached_input: 0.5
+      cost_per_1m_cached_output: 2.0
+  azure_foundry:text:o4-mini:
+    display_name: O4 Mini
+    provider_name: azure-foundry
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://adl-ai-foundry.cognitiveservices.azure.com
+      full_url: https://adl-ai-foundry.cognitiveservices.azure.com/openai/deployments/o4-mini/chat/completions?api-version=2024-12-01-preview
+      protocol: azure_sdk
+      api_version: 2024-12-01-preview
+      use_max_completion_tokens: true
+      has_temperature_supported: false
+      max_input_tokens: 200000
+      max_output_tokens: 100000
+      deployment: o4-mini
+      response_format_strict_is_string: false
+      inject_root_additional_properties_false: true
+      model_param: false
+      tool_format: none
+    auth:
+      type: header
+    secrets:
+      type: environment
+      name: AZURE_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: o4-mini
+      currency: USD
+      cost_per_1m_input: 1.1
+      cost_per_1m_output: 4.4
+      cost_per_1m_cached_input: 0.275
+      cost_per_1m_cached_output: 0.275
+    fallbacks:
+      - azure_foundry:text:gpt-4-1-mini
+  openrouter:audio:google-gemini-2-0-flash-lite-001:
+    display_name: Google Gemini 2 0 Flash Lite 001
+    provider_name: openrouter
+    input_modality:
+      - audio
+    output_modality:
+      - audio
+    runtime:
+      base_url: https://openrouter.ai/api/v1
+      full_url: https://openrouter.ai/api/v1/chat/completions
+      protocol: openrouter_sdk
+      api_version: v1
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      deployment: google/gemini-2.0-flash-lite-001
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      max_input_tokens: 128000
+      max_output_tokens: 4096
+      tool_format: openai_tool_calls
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: OPENROUTER_API_KEY
+    capabilities:
+      tool_calls: true
+      reasoning: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: openrouter
+      provider_key: google/gemini-2.0-flash-lite-001
+      currency: USD
+      cost_per_1m_input: 0.0
+      cost_per_1m_output: 0.0
+  openrouter:audio:openai-gpt-4o-audio-preview:
+    display_name: OpenAI GPT 4O Audio Preview
+    provider_name: openrouter
+    input_modality:
+      - audio
+    output_modality:
+      - audio
+    runtime:
+      base_url: https://openrouter.ai/api/v1
+      full_url: https://openrouter.ai/api/v1/chat/completions
+      protocol: openrouter_sdk
+      api_version: v1
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      deployment: openai/gpt-4o-audio-preview
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      max_input_tokens: 128000
+      max_output_tokens: 4096
+      tool_format: openai_tool_calls
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: OPENROUTER_API_KEY
+    capabilities:
+      tool_calls: true
+      reasoning: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: openai/gpt-4o-audio-preview
+      currency: USD
+      cost_per_1m_input: 2.5
+      cost_per_1m_output: 10.0
+      cost_per_1m_cached_input: 2.5
+      cost_per_1m_cached_output: 10.0
+  openrouter:embedding:qwen-qwen3-embedding-8b:
+    display_name: Qwen3 Embedding 8B
+    provider_name: openrouter
+    input_modality:
+      - embedding
+    output_modality:
+      - embedding
+    runtime:
+      base_url: https://openrouter.ai/api/v1
+      full_url: https://openrouter.ai/api/v1/embeddings
+      protocol: openrouter_sdk
+      api_version: v1
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      deployment: qwen/qwen3-embedding-8b
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      max_input_tokens: 128000
+      max_output_tokens: 4096
+      tool_format: none
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: OPENROUTER_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: qwen/qwen3-embedding-8b
+      currency: USD
+      cost_per_1m_input: 0.02
+      cost_per_1m_output: 0.02
+      cost_per_1m_cached_input: 0.02
+      cost_per_1m_cached_output: 0.02
+  openrouter:image:sourceful-riverflow-v2-fast:
+    display_name: Sourceful Riverflow V2 Fast
+    provider_name: openrouter
+    input_modality:
+      - image
+    output_modality:
+      - image
+    runtime:
+      base_url: https://openrouter.ai/api/v1
+      full_url: https://openrouter.ai/api/v1/chat/completions
+      protocol: openrouter_sdk
+      api_version: v1
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      deployment: sourceful/riverflow-v2-fast
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      max_input_tokens: 128000
+      max_output_tokens: 4096
+      tool_format: none
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: OPENROUTER_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: sourceful/riverflow-v2-fast
+      currency: USD
+      cost_per_1m_input: 0.0
+      cost_per_1m_output: 0.0
+      cost_per_1m_pixels: 0.048
+  openrouter:image:sourceful-riverflow-v2-pro:
+    display_name: Sourceful Riverflow V2 Pro
+    provider_name: openrouter
+    input_modality:
+      - image
+    output_modality:
+      - image
+    runtime:
+      base_url: https://openrouter.ai/api/v1
+      full_url: https://openrouter.ai/api/v1/chat/completions
+      protocol: openrouter_sdk
+      api_version: v1
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      deployment: sourceful/riverflow-v2-pro
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      max_input_tokens: 128000
+      max_output_tokens: 4096
+      tool_format: none
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: OPENROUTER_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: sourceful/riverflow-v2-pro
+      currency: USD
+      cost_per_1m_input: 0.0
+      cost_per_1m_output: 0.0
+      cost_per_1m_cached_input: 0.0
+      cost_per_1m_cached_output: 0.0
+      cost_per_1m_pixels: 0.048
+  openrouter:text:arcee-ai-trinity-large-preview-free:
+    display_name: Arcee Ai Trinity Large Preview Free
+    provider_name: openrouter
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://openrouter.ai/api/v1
+      full_url: https://openrouter.ai/api/v1/chat/completions
+      protocol: openrouter_sdk
+      api_version: v1
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      max_input_tokens: 128000
+      max_output_tokens: 8192
+      deployment: arcee-ai/trinity-large-preview:free
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      tool_format: none
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: OPENROUTER_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: arcee-ai/trinity-large-preview:free
+      currency: USD
+      cost_per_1m_input: 0.0
+      cost_per_1m_output: 0.0
+      cost_per_1m_cached_input: 0.0
+      cost_per_1m_cached_output: 0.0
+  openrouter:text:arcee-ai-trinity-mini-free:
+    display_name: Arcee Ai Trinity Mini Free
+    provider_name: openrouter
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://openrouter.ai/api/v1
+      full_url: https://openrouter.ai/api/v1/chat/completions
+      protocol: openrouter_sdk
+      api_version: v1
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      max_input_tokens: 128000
+      max_output_tokens: 8192
+      deployment: arcee-ai/trinity-mini:free
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      tool_format: openai_tool_calls
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: OPENROUTER_API_KEY
+    capabilities:
+      tool_calls: true
+      parallel_tool_calls: true
+      reasoning: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: arcee-ai/trinity-mini:free
+      currency: USD
+      cost_per_1m_input: 0.0
+      cost_per_1m_output: 0.0
+      cost_per_1m_cached_input: 0.0
+      cost_per_1m_cached_output: 0.0
+  openrouter:text:black-forest-labs-flux-2-klein-4b:
+    display_name: Black Forest Labs Flux 2 Klein 4B
+    provider_name: openrouter
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://openrouter.ai/api/v1
+      full_url: https://openrouter.ai/api/v1/chat/completions
+      protocol: openrouter_sdk
+      api_version: v1
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      max_input_tokens: 41000
+      max_output_tokens: 4096
+      deployment: black-forest-labs/flux.2-klein-4b
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      tool_format: none
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: OPENROUTER_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: black-forest-labs/flux.2-klein-4b
+      currency: USD
+      cost_per_1m_input: 0.0
+      cost_per_1m_output: 0.0
+      cost_per_1m_cached_input: 0.0
+      cost_per_1m_cached_output: 0.0
+  openrouter:text:liquid-lfm-2-5-1-2b-instruct-free:
+    display_name: Liquid Lfm 2 5 1 2B Instruct Free
+    provider_name: openrouter
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://openrouter.ai/api/v1
+      full_url: https://openrouter.ai/api/v1/chat/completions
+      protocol: openrouter_sdk
+      api_version: v1
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      max_input_tokens: 32768
+      max_output_tokens: 4096
+      deployment: liquid/lfm-2.5-1.2b-instruct:free
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      tool_format: none
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: OPENROUTER_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: liquid/lfm-2.5-1.2b-instruct:free
+      currency: USD
+      cost_per_1m_input: 0.0
+      cost_per_1m_output: 0.0
+      cost_per_1m_cached_input: 0.0
+      cost_per_1m_cached_output: 0.0
+  openrouter:text:liquid-lfm-2-5-1-2b-thinking-free:
+    display_name: Liquid Lfm 2 5 1 2B Thinking Free
+    provider_name: openrouter
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://openrouter.ai/api/v1
+      full_url: https://openrouter.ai/api/v1/chat/completions
+      protocol: openrouter_sdk
+      api_version: v1
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      max_input_tokens: 32768
+      max_output_tokens: 4096
+      deployment: liquid/lfm-2.5-1.2b-thinking:free
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      tool_format: none
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: OPENROUTER_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: liquid/lfm-2.5-1.2b-thinking:free
+      currency: USD
+      cost_per_1m_input: 0.0
+      cost_per_1m_output: 0.0
+      cost_per_1m_cached_input: 0.0
+      cost_per_1m_cached_output: 0.0
+  openrouter:text:openrouter-aurora-alpha:
+    display_name: Openrouter Aurora Alpha
+    provider_name: openrouter
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://openrouter.ai/api/v1
+      full_url: https://openrouter.ai/api/v1/chat/completions
+      protocol: openrouter_sdk
+      api_version: v1
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      max_input_tokens: 128000
+      max_output_tokens: 8192
+      deployment: openrouter/aurora-alpha
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      tool_format: none
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: OPENROUTER_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: openrouter/aurora-alpha
+      currency: USD
+      cost_per_1m_input: 0.0
+      cost_per_1m_output: 0.0
+      cost_per_1m_cached_input: 0.0
+      cost_per_1m_cached_output: 0.0
+  openrouter:text:sourceful-riverflow-v2-fast:
+    display_name: Sourceful Riverflow V2 Fast
+    provider_name: openrouter
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://openrouter.ai/api/v1
+      full_url: https://openrouter.ai/api/v1/chat/completions
+      protocol: openrouter_sdk
+      api_version: v1
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      max_input_tokens: 8000
+      max_output_tokens: 2048
+      deployment: sourceful/riverflow-v2-fast
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      tool_format: none
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: OPENROUTER_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: sourceful/riverflow-v2-fast
+      currency: USD
+      cost_per_1m_input: 0.0
+      cost_per_1m_output: 0.0
+      cost_per_1m_cached_input: 0.0
+      cost_per_1m_cached_output: 0.0
+  openrouter:text:sourceful-riverflow-v2-pro:
+    display_name: Sourceful Riverflow V2 Pro
+    provider_name: openrouter
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://openrouter.ai/api/v1
+      full_url: https://openrouter.ai/api/v1/chat/completions
+      protocol: openrouter_sdk
+      api_version: v1
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      max_input_tokens: 8000
+      max_output_tokens: 2048
+      deployment: sourceful/riverflow-v2-pro
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      tool_format: none
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: OPENROUTER_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: sourceful/riverflow-v2-pro
+      currency: USD
+      cost_per_1m_input: 0.0
+      cost_per_1m_output: 0.0
+      cost_per_1m_cached_input: 0.0
+      cost_per_1m_cached_output: 0.0
+  openrouter:text:stepfun-step-3-5-flash-free:
+    display_name: Stepfun Step 3 5 Flash Free
+    provider_name: openrouter
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://openrouter.ai/api/v1
+      full_url: https://openrouter.ai/api/v1/chat/completions
+      protocol: openrouter_sdk
+      api_version: v1
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      max_input_tokens: 256000
+      max_output_tokens: 16384
+      deployment: stepfun/step-3.5-flash:free
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      tool_format: none
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: OPENROUTER_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: stepfun/step-3.5-flash:free
+      currency: USD
+      cost_per_1m_input: 0.0
+      cost_per_1m_output: 0.0
+      cost_per_1m_cached_input: 0.0
+      cost_per_1m_cached_output: 0.0
+  openrouter:text:nvidia-nemotron-3-super-120b-a12b-free:
+    display_name: NVIDIA Nemotron 3 Super (free)
+    provider_name: openrouter
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://openrouter.ai/api/v1
+      full_url: https://openrouter.ai/api/v1/chat/completions
+      protocol: openrouter_sdk
+      api_version: v1
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      max_input_tokens: 262144
+      max_output_tokens: 262144
+      deployment: nvidia/nemotron-3-super-120b-a12b:free
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      tool_format: openai_tool_calls
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: OPENROUTER_API_KEY
+    capabilities:
+      tool_calls: true
+      parallel_tool_calls: false
+      reasoning: true
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: nvidia/nemotron-3-super-120b-a12b:free
+      currency: USD
+      cost_per_1m_input: 0.0
+      cost_per_1m_output: 0.0
+      cost_per_1m_cached_input: 0.0
+      cost_per_1m_cached_output: 0.0
+  openrouter:text:upstage-solar-pro-3-free:
+    display_name: Upstage Solar Pro 3 Free
+    provider_name: openrouter
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://openrouter.ai/api/v1
+      full_url: https://openrouter.ai/api/v1/chat/completions
+      protocol: openrouter_sdk
+      api_version: v1
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      max_input_tokens: 128000
+      max_output_tokens: 8192
+      deployment: upstage/solar-pro-3:free
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      tool_format: none
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: OPENROUTER_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: false
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: upstage/solar-pro-3:free
+      currency: USD
+      cost_per_1m_input: 0.0
+      cost_per_1m_output: 0.0
+      cost_per_1m_cached_input: 0.0
+      cost_per_1m_cached_output: 0.0
+  openrouter:video:google-gemini-2-0-flash-lite-001:
+    display_name: Google Gemini 2 0 Flash Lite 001
+    provider_name: openrouter
+    input_modality:
+      - text
+    output_modality:
+      - video
+    runtime:
+      base_url: https://openrouter.ai/api/v1
+      full_url: https://openrouter.ai/api/v1/chat/completions
+      protocol: openrouter_sdk
+      api_version: v1
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      deployment: google/gemini-2.0-flash-lite-001
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      max_input_tokens: 128000
+      max_output_tokens: 4096
+      tool_format: openai_tool_calls
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: OPENROUTER_API_KEY
+    capabilities:
+      tool_calls: true
+      reasoning: false
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: google/gemini-2.0-flash-lite-001
+      currency: USD
+      cost_per_1m_input: 0.0
+      cost_per_1m_output: 0.0
+      cost_per_1m_cached_input: 0.0
+      cost_per_1m_cached_output: 0.0
+  openrouter:video:google-gemini-2-5-flash-lite-preview-09-2025:
+    display_name: Google Gemini 2 5 Flash Lite Preview 09 2025
+    provider_name: openrouter
+    input_modality:
+      - text
+    output_modality:
+      - video
+    runtime:
+      base_url: https://openrouter.ai/api/v1
+      full_url: https://openrouter.ai/api/v1/chat/completions
+      protocol: openrouter_sdk
+      api_version: v1
+      use_max_completion_tokens: false
+      has_temperature_supported: false
+      deployment: google/gemini-2.5-flash-lite-preview-09-2025
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      max_input_tokens: 128000
+      max_output_tokens: 4096
+      tool_format: openai_tool_calls
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: OPENROUTER_API_KEY
+    capabilities:
+      tool_calls: true
+      reasoning: false
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-18T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: portkey
+      provider_key: google/gemini-2.5-flash-lite-preview-09-2025
+      currency: USD
+      cost_per_1m_input: 0.0
+      cost_per_1m_output: 0.0
+  moonshot:text:kimi-for-coding:
+    display_name: Kimi For Coding
+    provider_name: moonshot
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://api.kimi.com/coding/v1
+      full_url: https://api.kimi.com/coding/v1/messages
+      protocol: anthropic_sdk
+      api_version: "2023-06-01"
+      use_max_completion_tokens: true
+      has_temperature_supported: true
+      max_input_tokens: 131072
+      max_output_tokens: 32768
+      model_param: true
+      deployment: kimi-for-coding
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      tool_format: anthropic_tool_use
+    auth:
+      type: header
+    secrets:
+      type: environment
+      name: MOONSHOT_API_KEY
+    capabilities:
+      tool_calls: true
+      parallel_tool_calls: true
+      reasoning: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-25T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: moonshot
+      provider_key: kimi-for-coding
+      currency: USD
+      cost_per_1m_input: 0.6
+      cost_per_1m_output: 2.5
+      cost_per_1m_cached_input: 0.15
+      cost_per_1m_cached_output: 2.5
+  moonshot:text:kimi-k2-instruct:
+    display_name: Kimi K2 Instruct
+    provider_name: moonshot
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://api.kimi.com/coding/v1
+      full_url: https://api.kimi.com/coding/v1/messages
+      protocol: anthropic_sdk
+      api_version: "2023-06-01"
+      use_max_completion_tokens: true
+      has_temperature_supported: true
+      max_input_tokens: 131072
+      max_output_tokens: 32768
+      model_param: true
+      deployment: kimi-k2-instruct
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      tool_format: anthropic_tool_use
+    auth:
+      type: header
+    secrets:
+      type: environment
+      name: MOONSHOT_API_KEY
+    capabilities:
+      tool_calls: true
+      parallel_tool_calls: true
+      reasoning: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-25T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: moonshot
+      provider_key: kimi-k2-instruct
+      currency: USD
+      cost_per_1m_input: 0.6
+      cost_per_1m_output: 2.5
+      cost_per_1m_cached_input: 0.15
+      cost_per_1m_cached_output: 2.5
+  moonshot:text:kimi-k2-thinking:
+    display_name: Kimi K2 Thinking
+    provider_name: moonshot
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://api.kimi.com/coding/v1
+      full_url: https://api.kimi.com/coding/v1/messages
+      protocol: anthropic_sdk
+      api_version: "2023-06-01"
+      use_max_completion_tokens: true
+      has_temperature_supported: true
+      max_input_tokens: 131072
+      max_output_tokens: 32768
+      model_param: true
+      thinking_enabled: true
+      deployment: kimi-k2-thinking
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      tool_format: anthropic_tool_use
+    auth:
+      type: header
+    secrets:
+      type: environment
+      name: MOONSHOT_API_KEY
+    capabilities:
+      tool_calls: true
+      parallel_tool_calls: true
+      reasoning: false
+    governance:
+      is_use_approve: true
+      approved_by: admin
+      approval_date: "2026-02-25T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: moonshot
+      provider_key: kimi-k2-thinking
+      currency: USD
+      cost_per_1m_input: 0.6
+      cost_per_1m_output: 2.5
+      cost_per_1m_cached_input: 0.15
+      cost_per_1m_cached_output: 2.5
+  lm_studio:text:gpt-oss-20b:
+    display_name: GPT OSS 20b
+    provider_name: lm-studio
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: http://localhost:1234
+      full_url: http://localhost:1234/v1/chat/completions
+      deployment: openai/gpt-oss-20b
+      protocol: openai_compatible
+      api_version: v1
+      use_max_completion_tokens: true
+      has_temperature_supported: true
+      max_input_tokens: 128000
+      max_output_tokens: 16384
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      tool_format: openai_tool_calls
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: LM_API_TOKEN
+    capabilities:
+      tool_calls: true
+      reasoning: true
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: true
+      approved_by: user
+      approval_date: "2026-02-27T00:00:00Z"
+      lifecycle_status: active
+    cost:
+      provider: local
+      provider_key: local
+      currency: USD
+      cost_per_1m_input: 0
+      cost_per_1m_output: 0
+      cost_per_1m_cached_input: 0
+      cost_per_1m_cached_output: 0
+  nano_gpt:text:glm-5-thinking:
+    display_name: NanoGPT GLM 5 Thinking
+    provider_name: nano-gpt
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://nano-gpt.com/api/subscription/v1
+      full_url: https://nano-gpt.com/api/subscription/v1/chat/completions
+      protocol: openai_compatible
+      api_version: v1
+      use_max_completion_tokens: true
+      has_temperature_supported: true
+      max_input_tokens: 200000
+      max_output_tokens: 128000
+      deployment: zai-org/glm-5:thinking
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      tool_format: openai_tool_calls
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: NANO_GPT_API_KEY
+    capabilities:
+      tool_calls: true
+      parallel_tool_calls: true
+      reasoning: true
+    governance:
+      is_use_approve: false
+      lifecycle_status: active
+    cost:
+      provider: nanogpt
+      provider_key: zai-org/glm-5:thinking
+      currency: USD
+      cost_per_1m_input: 0.29
+      cost_per_1m_output: 2.42
+  nano_gpt:text:minimax-m2-7:
+    display_name: NanoGPT MiniMax M2.7
+    provider_name: nano-gpt
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://nano-gpt.com/api/subscription/v1
+      full_url: https://nano-gpt.com/api/subscription/v1/chat/completions
+      protocol: openai_compatible
+      api_version: v1
+      use_max_completion_tokens: true
+      has_temperature_supported: true
+      max_input_tokens: 204800
+      max_output_tokens: 131100
+      deployment: minimax/minimax-m2.7
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      tool_format: openai_tool_calls
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: NANO_GPT_API_KEY
+    capabilities:
+      tool_calls: true
+      parallel_tool_calls: true
+      reasoning: true
+    governance:
+      is_use_approve: false
+      lifecycle_status: active
+    cost:
+      provider: nanogpt
+      provider_key: minimax/minimax-m2.7
+      currency: USD
+      cost_per_1m_input: 0.29
+      cost_per_1m_output: 1.14
+  nano_gpt:text:kimi-k2-5-thinking:
+    display_name: NanoGPT Kimi K2.5 Thinking
+    provider_name: nano-gpt
+    input_modality:
+      - text
+      - image
+    output_modality:
+      - text
+    runtime:
+      base_url: https://nano-gpt.com/api/subscription/v1
+      full_url: https://nano-gpt.com/api/subscription/v1/chat/completions
+      protocol: openai_compatible
+      api_version: v1
+      use_max_completion_tokens: true
+      has_temperature_supported: true
+      max_input_tokens: 256000
+      max_output_tokens: 65500
+      deployment: moonshotai/kimi-k2.5:thinking
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      tool_format: openai_tool_calls
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: NANO_GPT_API_KEY
+    capabilities:
+      tool_calls: true
+      parallel_tool_calls: true
+      reasoning: true
+    governance:
+      is_use_approve: false
+      lifecycle_status: active
+    cost:
+      provider: nanogpt
+      provider_key: moonshotai/kimi-k2.5:thinking
+      currency: USD
+      cost_per_1m_input: 0.29
+      cost_per_1m_output: 1.81
+  nano_gpt:text:qwen3-5-122b-a10b-thinking:
+    display_name: NanoGPT Qwen3.5 122B A10B Thinking
+    provider_name: nano-gpt
+    input_modality:
+      - text
+      - image
+    output_modality:
+      - text
+    runtime:
+      base_url: https://nano-gpt.com/api/subscription/v1
+      full_url: https://nano-gpt.com/api/subscription/v1/chat/completions
+      protocol: openai_compatible
+      api_version: v1
+      use_max_completion_tokens: true
+      has_temperature_supported: true
+      max_input_tokens: 260100
+      max_output_tokens: 65500
+      deployment: qwen3.5-122b-a10b:thinking
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      tool_format: none
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: NANO_GPT_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: true
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: false
+      lifecycle_status: active
+    cost:
+      provider: nanogpt
+      provider_key: qwen3.5-122b-a10b:thinking
+      currency: USD
+      cost_per_1m_input: 0.34
+      cost_per_1m_output: 2.74
+  nano_gpt:text:glm-4-7-flash-thinking:
+    display_name: NanoGPT GLM 4.7 Flash Thinking
+    provider_name: nano-gpt
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://nano-gpt.com/api/subscription/v1
+      full_url: https://nano-gpt.com/api/subscription/v1/chat/completions
+      protocol: openai_compatible
+      api_version: v1
+      use_max_completion_tokens: true
+      has_temperature_supported: true
+      max_input_tokens: 200000
+      max_output_tokens: 128000
+      deployment: zai-org/glm-4.7-flash:thinking
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      tool_format: none
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: NANO_GPT_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: true
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: false
+      lifecycle_status: active
+    cost:
+      provider: nanogpt
+      provider_key: zai-org/glm-4.7-flash:thinking
+      currency: USD
+      cost_per_1m_input: 0.07
+      cost_per_1m_output: 0.38
+  nano_gpt:text:gpt-oss-120b:
+    display_name: NanoGPT GPT OSS 120B
+    provider_name: nano-gpt
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://nano-gpt.com/api/subscription/v1
+      full_url: https://nano-gpt.com/api/subscription/v1/chat/completions
+      protocol: openai_compatible
+      api_version: v1
+      use_max_completion_tokens: true
+      has_temperature_supported: true
+      max_input_tokens: 128000
+      max_output_tokens: 16400
+      deployment: openai/gpt-oss-120b
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      tool_format: openai_tool_calls
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: NANO_GPT_API_KEY
+    capabilities:
+      tool_calls: true
+      parallel_tool_calls: false
+      reasoning: true
+    governance:
+      is_use_approve: false
+      lifecycle_status: active
+    cost:
+      provider: nanogpt
+      provider_key: openai/gpt-oss-120b
+      currency: USD
+      cost_per_1m_input: 0.05
+      cost_per_1m_output: 0.24
+  nano_gpt:text:qwen3-5-397b-a17b-thinking:
+    display_name: NanoGPT Qwen3.5 397B A17B Thinking
+    provider_name: nano-gpt
+    input_modality:
+      - text
+      - image
+    output_modality:
+      - text
+    runtime:
+      base_url: https://nano-gpt.com/api/subscription/v1
+      full_url: https://nano-gpt.com/api/subscription/v1/chat/completions
+      protocol: openai_compatible
+      api_version: v1
+      use_max_completion_tokens: true
+      has_temperature_supported: true
+      max_input_tokens: 260100
+      max_output_tokens: 65500
+      deployment: qwen/qwen3.5-397b-a17b-thinking
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      tool_format: none
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: NANO_GPT_API_KEY
+    capabilities:
+      tool_calls: false
+      reasoning: true
+      parallel_tool_calls: false
+    governance:
+      is_use_approve: false
+      lifecycle_status: active
+    cost:
+      provider: nanogpt
+      provider_key: qwen/qwen3.5-397b-a17b-thinking
+      currency: USD
+      cost_per_1m_input: 0.34
+      cost_per_1m_output: 2.74
+  nano_gpt:text:nemotron-3-super-120b-thinking:
+    display_name: NanoGPT Nvidia Nemotron 3 Super 120B Thinking
+    provider_name: nano-gpt
+    input_modality:
+      - text
+    output_modality:
+      - text
+    runtime:
+      base_url: https://nano-gpt.com/api/subscription/v1
+      full_url: https://nano-gpt.com/api/subscription/v1/chat/completions
+      protocol: openai_compatible
+      api_version: v1
+      use_max_completion_tokens: true
+      has_temperature_supported: true
+      max_input_tokens: 128000
+      max_output_tokens: 16400
+      deployment: nvidia/nemotron-3-super-120b-a12b:thinking
+      response_format_strict_is_string: true
+      inject_root_additional_properties_false: false
+      model_param: false
+      tool_format: openai_tool_calls
+    auth:
+      type: bearer
+    secrets:
+      type: environment
+      name: NANO_GPT_API_KEY
+    capabilities:
+      tool_calls: true
+      parallel_tool_calls: false
+      reasoning: true
+    governance:
+      is_use_approve: false
+      lifecycle_status: active
+    cost:
+      provider: nanogpt
+      provider_key: nvidia/nemotron-3-super-120b-a12b:thinking
+      currency: USD
+      cost_per_1m_input: 0.05
+      cost_per_1m_output: 0.24

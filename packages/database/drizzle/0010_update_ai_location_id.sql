@@ -1,0 +1,1 @@
+ALTER TABLE `update_ai_outputs` ADD `locationId` text;

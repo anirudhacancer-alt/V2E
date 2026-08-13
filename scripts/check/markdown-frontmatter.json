@@ -1,0 +1,7 @@
+{
+  "enabled": true,
+  "maxAgeMs": 7200000,
+  "futureSkewMs": 300000,
+  "includePrefixes": ["docs/architecture/", "docs/strategy/"],
+  "excludePaths": ["docs/common/IMPORTANT-CODE-TREE.md"]
+}

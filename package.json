@@ -1,0 +1,48 @@
+{
+  "name": "voice-to-execution",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "lsof -ti:3000 | xargs kill -9 && lsof -ti:3001 | xargs kill -9 && lsof -ti:3002 | xargs kill -9 && lsof -ti:3003 | xargs kill -9 && turbo run dev",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepare": "husky",
+    "clean": "turbo run clean && rm -rf node_modules .turbo",
+    "docs:tree:update": "node scripts/docs/generate-important-code-tree.mjs",
+    "docs:tree:check": "node scripts/docs/generate-important-code-tree.mjs --check",
+    "check:docs-agent-entry": "bash scripts/git/check-docs-agent-entry-files.sh",
+    "check:agents-md-contract": "node scripts/check/agents-md-contract-doc.mjs",
+    "check:padding": "node scripts/check-card-padding.mjs",
+    "check:contracts-boundary": "node scripts/check/contracts-boundary.mjs",
+    "check:route-structure-invariant": "node scripts/check/route-structure-invariant.mjs",
+    "check:markdown-frontmatter": "node scripts/check/markdown-staged-frontmatter.mjs --staged",
+    "test:e2e": "playwright test",
+    "test:e2e:install": "playwright install webkit",
+    "check:all": "pnpm docs:tree:check && pnpm check:docs-agent-entry && pnpm check:agents-md-contract && pnpm check:markdown-frontmatter && pnpm check:contracts-boundary && pnpm check:route-structure-invariant && pnpm check:padding && pnpm typecheck && pnpm test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "husky": "^9.1.7",
+    "jsdom": "^29.0.1",
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2",
+    "vitest": "^3.0.5"
+  },
+  "pnpm": {
+    "overrides": {
+      "@enact-ui/animate": "file:../../enact-ui/packages/animate",
+      "@enact-ui/application": "file:../../enact-ui/packages/application",
+      "@enact-ui/charts": "file:../../enact-ui/packages/charts",
+      "@enact-ui/presets": "file:../../enact-ui/packages/presets",
+      "@enact-ui/react": "file:../../enact-ui/packages/react"
+    }
+  }
+}

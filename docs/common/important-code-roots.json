@@ -1,0 +1,85 @@
+{
+  "roots": [
+    {
+      "path": "apps/api/src",
+      "label": "API backend"
+    },
+    {
+      "path": "apps/field-app/src",
+      "label": "Field app (field execution UI; web + Capacitor; legacy supervisor/ segment)"
+    },
+    {
+      "path": "packages/contracts/src",
+      "label": "Shared contracts (source of truth)"
+    },
+    {
+      "path": "packages/database/src",
+      "label": "Database schema and seed pipeline"
+    },
+    {
+      "path": "packages/ai/src",
+      "label": "AI orchestration layer"
+    },
+    {
+      "path": "docs/demo/tools",
+      "label": "Demo dataset generators and validators (CSV bundles)"
+    },
+    {
+      "path": "scripts/docs",
+      "label": "Documentation automation scripts"
+    },
+    {
+      "path": "scripts/check",
+      "label": "Repository hygiene checks (contracts boundary, etc.)"
+    },
+    {
+      "path": "scripts/git",
+      "label": "Git hook implementation (Husky entrypoints live under .husky/)"
+    },
+    {
+      "path": "e2e",
+      "label": "Playwright end-to-end tests (WebKit)"
+    }
+  ],
+  "importantFiles": [
+    "AGENTS.md",
+    "CHANGELOG.md",
+    "docs/common/PRD.md",
+    "package.json",
+    "turbo.json",
+    ".husky/pre-commit",
+    ".husky/pre-push",
+    ".husky/post-merge",
+    ".husky/post-commit",
+    ".husky/post-checkout",
+    "scripts/git/README.md",
+    "docs/architecture/REPO-INVARIANTS.md",
+    "docs/architecture/adr/README.md",
+    "playwright.config.ts",
+    "vitest.config.ts",
+    "docs/strategy/PLATFORM-SURFACES-IA-AND-FOLDER-TREE.md",
+    "docs/strategy/USP-GTM-AND-PROGRESS-TRACKER.md",
+    "docs/strategy/AGILE-EXECUTION-DATA-MODEL.md",
+    "docs/marketing/MARKETING-WEBSITE-HOMEPAGE-SECTIONS.md",
+    "docs/api/overview.md",
+    "docs/api/routes/AGENTS.md",
+    "docs/data-model/canonical-org-location-and-integrity.md",
+    "docs/data-model/update.md",
+    "docs/demo/datasets/AGENTS.md",
+    "docs/strategy/WORKSTREAM-DOCS-FRAMEWORK.md",
+    "docs/strategy/SYSTEM-DOCS-INDEX.md"
+  ],
+  "excludeNames": [
+    ".DS_Store",
+    "node_modules",
+    "dist",
+    "coverage",
+    ".turbo"
+  ],
+  "excludeSuffixes": [
+    ".map"
+  ],
+  "excludeFiles": [
+    "apps/field-app/src/routeTree.gen.ts"
+  ]
+}

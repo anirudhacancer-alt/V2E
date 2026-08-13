@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+set -e
+bash scripts/git/post-commit.sh "$@"

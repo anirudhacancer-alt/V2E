@@ -1,0 +1,1 @@
+ALTER TABLE `locations` ADD `listLabel` text NOT NULL DEFAULT '';

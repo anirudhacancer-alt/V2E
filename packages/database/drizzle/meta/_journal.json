@@ -1,0 +1,174 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1774344061087,
+      "tag": "0000_high_captain_stacy",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1774367349058,
+      "tag": "0001_wakeful_texas_twister",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1774400000000,
+      "tag": "0002_supervisor_card_workflow",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1774415075764,
+      "tag": "0003_drop_standup_completed_completion_percentage",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1774415810608,
+      "tag": "0004_drop_standup_line_item_tables",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1774416130868,
+      "tag": "0005_updates_linked_task_id",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1774427163748,
+      "tag": "0006_drop_standup_tables",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "6",
+      "when": 1774427295708,
+      "tag": "0007_attendance_sessions_and_attachment_task_id",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "6",
+      "when": 1774441620386,
+      "tag": "0008_watery_black_crow",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "6",
+      "when": 1774451049088,
+      "tag": "0009_locations_and_location_id",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "6",
+      "when": 1774451060034,
+      "tag": "0010_update_ai_location_id",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "6",
+      "when": 1774451171591,
+      "tag": "0011_updates_location_id",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "6",
+      "when": 1774452207433,
+      "tag": "0012_locations_list_label",
+      "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "6",
+      "when": 1774453000000,
+      "tag": "0013_departments_role_types_and_columns",
+      "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "6",
+      "when": 1774454000000,
+      "tag": "0014_drop_trade_columns",
+      "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "6",
+      "when": 1774462000000,
+      "tag": "0015_project_standup_ai_summaries",
+      "breakpoints": true
+    },
+    {
+      "idx": 16,
+      "version": "6",
+      "when": 1774470000000,
+      "tag": "0016_canonical_org_codes_and_location_fk",
+      "breakpoints": true
+    },
+    {
+      "idx": 17,
+      "version": "6",
+      "when": 1774480000000,
+      "tag": "0017_phase_b_agile_execution_layer",
+      "breakpoints": true
+    },
+    {
+      "idx": 18,
+      "version": "6",
+      "when": 1774490000000,
+      "tag": "0018_phase_c_improvement_actions",
+      "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "6",
+      "when": 1774500000000,
+      "tag": "0019_phase_d_standup_sessions_notifications",
+      "breakpoints": true
+    },
+    {
+      "idx": 20,
+      "version": "6",
+      "when": 1774510000000,
+      "tag": "0020_spec_alignment_update_task_columns",
+      "breakpoints": true
+    },
+    {
+      "idx": 21,
+      "version": "6",
+      "when": 1774520000000,
+      "tag": "0021_projects_type_status_outbox",
+      "breakpoints": true
+    },
+    {
+      "idx": 22,
+      "version": "6",
+      "when": 1774530000000,
+      "tag": "0022_notification_delivery_tables",
+      "breakpoints": true
+    },
+    {
+      "idx": 23,
+      "version": "6",
+      "when": 1774610000000,
+      "tag": "0023_canonical_routes_notifications_and_audit_alignment",
+      "breakpoints": true
+    }
+  ]
+}
